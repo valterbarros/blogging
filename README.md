@@ -32,7 +32,7 @@ Existe um workflow hoje que eu preciso fazer manualmente e ele seria:
   - [x] Salvar imagem na pasta articles/_posts/assets quando fier upload
   - [x] Exibir imagem no blog in live
   - [] Comprimir imagens
-  - [] Extrair cli para projeto a parte e integrar
+  - [x] Extrair cli para projeto a parte e integrar
 
 Refatorações
 
