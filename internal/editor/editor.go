@@ -16,8 +16,8 @@ import (
 	"valterbarros/blog-tools/internal/utils"
 )
 
-var f, _ = utils.GetFromRoot("cli/web/editor.html")
-var f2, _ = utils.GetFromRoot("cli/web/index.html")
+var f, _ = utils.GetFromRoot("blogging/web/editor.html")
+var f2, _ = utils.GetFromRoot("blogging/web/index.html")
 var templates = template.Must(template.ParseFiles(f, f2))
 
 type Page struct {
