@@ -1,6 +1,7 @@
 package editor
 
 import (
+	"embed"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -16,9 +17,10 @@ import (
 	"valterbarros/blog-tools/internal/utils"
 )
 
-var f, _ = utils.GetFromRoot("blogging/web/editor.html")
-var f2, _ = utils.GetFromRoot("blogging/web/index.html")
-var templates = template.Must(template.ParseFiles(f, f2))
+//go:embed web/*.html
+var templatesFS embed.FS
+
+var templates = template.Must(template.ParseFS(templatesFS, "web/*.html"))
 
 type Page struct {
 	Title string
