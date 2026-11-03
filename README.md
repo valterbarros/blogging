@@ -1,3 +1,5 @@
+Mais sobre a ferramenta: https://valterbarros.github.io/articles/blog-editor/
+
 Tarefas
 
 O projeto atual do blog é gerenciado usando jekyll e o gh pages, então a parte de templates, includes, variaveis de template está resolvido
