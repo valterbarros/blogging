@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor Markdown Minimalista com Spellcheck</title>
+  <link rel="stylesheet" href="/assets/editor.css">
+  <script type="module" src="/assets/editor.js"></script>
+</head>
+<body>
+  <a href="../">Voltar</a>
+  <h2 id="js-title"></h2>
+
+  <div class="container">
+    <div class="left">
+      <template id="js-data-article">{{ printf "%s" .Body }}</template>
+      <div class="editor" id="editor-container"></div>
+    </div>
+    <div class="right">
+      <div class="preview" id="js-preview"></div>
+    </div>
+  </div>
+</body>
+</html>
