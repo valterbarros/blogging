@@ -11,11 +11,27 @@ go build cmd/cli
 ### Utilizando o cli
 > A mesma foi feita para ser executada como um submodulo do repo https://github.com/valterbarros/valterbarros.github.io
 
-Comando geral
+Comando help
 
 ```bash
 ./cli --help
 
+Manage blog CLI.
+
+Usage:
+  cli [command]
+
+Available Commands:
+  commit      commit data.
+  completion  Generate the autocompletion script for the specified shell
+  drafts      Manage drafts.
+  help        Help about any command
+  posts       utils to create/list/delete posts.
+
+Flags:
+  -h, --help   help for blogging
+
+Use "blogging [command] --help" for more information about a command.
 ```
 
 Sub comandos de posts
