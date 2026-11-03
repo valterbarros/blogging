@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"io/fs"
 	"log"
 	"net/http"
 	"os"
@@ -16,6 +17,9 @@ import (
 	"valterbarros/blog-tools/internal/content"
 	"valterbarros/blog-tools/internal/utils"
 )
+
+//go:embed web/assets/*
+var staticFs embed.FS
 
 //go:embed web/*.html
 var templatesFS embed.FS
@@ -128,10 +132,16 @@ func RunServer() error {
 
 	http.HandleFunc("/ws", handleWebSocket)
 
-	p, _ := utils.GetFromRoot("cli/web/assets")
 	imgs, _ := utils.GetFromRoot("articles/imgs")
-	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir(p))))
 	http.Handle("/articles/imgs/", http.StripPrefix("/articles/imgs/", http.FileServer(http.Dir(imgs))))
+
+	assets, errFs := fs.Sub(staticFs, "web/assets")
+	if errFs != nil {
+		return errFs
+	}
+
+	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.FS(assets))))
+
 	http.HandleFunc("/editor", editorHandler)
 	http.HandleFunc("/upload", uploadHandler)
 	http.HandleFunc("/", listHandler)

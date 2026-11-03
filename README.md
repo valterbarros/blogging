@@ -2,11 +2,41 @@ Mais sobre a ferramenta: https://valterbarros.github.io/articles/blog-editor/
 
 Esse projeto veio de outro repo, o historico completo do git pode ser encontrado em: https://github.com/valterbarros/valterbarros.github.io/compare/37e7e4ed552fb9f2bd63535412d1068b2878a67a...abbb7443ea39accf313b5388bf6baffcad6735a9
 
-Tarefas
+### Building a ferramenta de CLI
 
-O projeto atual do blog é gerenciado usando jekyll e o gh pages, então a parte de templates, includes, variaveis de template está resolvido/
+```bash
+go build cmd/cli
+```
+
+### Utilizando o cli
+> A mesma foi feita para ser executada como um submodulo do repo https://github.com/valterbarros/valterbarros.github.io
+
+Comando geral
+
+```bash
+./cli --help
+
+```
+
+Sub comandos de posts
+
+```bash
+./cli posts --help
+```
+
+Executar o **editor+preview** para edição de posts
+
+```bash
+./cli posts edit
+
+# abra o link no navegador http://localhost:12769
+```
+
+---
 
 ### Tarefas
+
+O projeto atual do blog é gerenciado usando jekyll e o gh pages, então a parte de templates, includes, variaveis de template está resolvido/
 
 Existe um workflow hoje que eu preciso fazer manualmente e ele seria:
 - [x] criar um novo draft para um post, tudo que fica na pasta articles/drafts
