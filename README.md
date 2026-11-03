@@ -4,7 +4,9 @@ Esse projeto veio de outro repo, o historico completo do git pode ser encontrado
 
 Tarefas
 
-O projeto atual do blog é gerenciado usando jekyll e o gh pages, então a parte de templates, includes, variaveis de template está resolvido
+O projeto atual do blog é gerenciado usando jekyll e o gh pages, então a parte de templates, includes, variaveis de template está resolvido/
+
+### Tarefas
 
 Existe um workflow hoje que eu preciso fazer manualmente e ele seria:
 - [x] criar um novo draft para um post, tudo que fica na pasta articles/drafts
