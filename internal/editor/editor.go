@@ -146,6 +146,10 @@ func RunServer() error {
 	http.HandleFunc("/upload", uploadHandler)
 	http.HandleFunc("/", listHandler)
 
+	go func() {
+		fmt.Printf("Access http://localhost:%s", PORT)
+	}()
+
 	err := http.ListenAndServe(":"+PORT, nil)
 
 	if err != nil {
